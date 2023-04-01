@@ -33,3 +33,24 @@ class DatosRegistrados():
         else:
             flash('El correo es incorrecto', 'danger')
             return render_template('login.html')
+        
+#Funcion de registrar
+    def Registrar(self, nombre, usuario, correo, contraseña):
+        self.cursor.execute(f'SELECT usuario FROM persona')
+        usuarioOBT = self.cursor.fetchall()
+        self.cursor.execute(f'SELECT correo FROM persona')
+        correoOBT = self.cursor.fetchall()
+
+        if self.Comparar_datos(usuarioOBT, usuario) == True:
+            flash('Este usuario se encuentra en uso', 'danger')
+            return render_template('registrarse.html')
+        
+        elif self.Comparar_datos(correoOBT, correo) == True:
+            flash('Hay un correo con esta cuenta', 'danger')
+            return render_template('registrarse.html')
+        
+        else:
+            flash('Se ha registrado', 'success')
+            self.cursor.execute(f"INSERT INTO persona(nombre, usuario, correo, contraseña) VALUES('{nombre}','{usuario}','{correo}', '{contraseña}')")
+            self.conexion.commit()
+            return render_template('registrarse.html')
