@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="/static/css/main.css">
+    <title>MovieReview</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <h1>MovieReview</h1>
+                <ul>
+                    <li><a href="{{ url_for('mostrar_index') }}">Inicio</a></li>
+                    <li><a href="{{ url_for('mostrar_pelicula') }}">Peliculas</a></li>
+                    <li><a href="{{ url_for('mostrar_agg') }}">Agregar</a></li>
+                    <li><a href="#">Perfil</a></li>
+                </ul>
+        </nav>
+    </header>  
+
+    <div class="image-container" id="image-container">
+        <div class='cuadro'>
+            <img class="image" src="https://caracoltv.brightspotcdn.com/dims4/default/d26683c/2147483647/strip/true/crop/1920x1080+0+0/resize/1000x563!/quality/90/?url=http%3A%2F%2Fcaracol-brightspot.s3.amazonaws.com%2F05%2F15%2Fd862acba4f118c9a802daaa8d5d9%2Fportadas-peliculas-3.png" alt="">
+            <img class="image" src="https://s1.eestatic.com/2022/07/27/series/cine/690941046_226082951_1706x960.jpg" alt="">
+            <img class="image" src="https://s1.eestatic.com/2023/02/13/series/cine/741186049_230863380_1706x960.jpg" alt="">
+            <div class="overlay">
+                <p>MovieReview es una página web dedicada a brindar reseñas de películas <br>
+                con el objetivo de ayudara los cinéfilos a elegir las mejores opciones para <br>
+                disfrutar.</p>
+                <div class="btn-reseñas">
+                    <a href="" class="ver_reseñas">Ver reseñas</a>
+                </div>
+            </div>
+    </div>
+
+    <script>
+        const container = document.getElementById("image-container");
+const images = container.querySelectorAll(".image");
+
+let currentIndex = 0;
+
+function showImage(index) {
+  images.forEach(image => {
+    image.style.opacity = 0;
+  });
+
+  images[index].style.opacity = 1;
+  
+  currentIndex = index;
+
+  setTimeout(() => {
+    if (currentIndex === images.length - 1) {
+      showImage(0);
+    } else {
+      showImage(currentIndex + 1);
+    }
+  }, 5000);
+}
+
+showImage(0);
+    </script>
+
+</body>
+</html>
