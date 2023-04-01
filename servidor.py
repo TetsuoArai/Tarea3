@@ -25,6 +25,12 @@ def mostrar_index():
 def mostrar_agg():
     return render_template('agregar.html')
 
+@app.route('/pelicula')
+def mostrar_pelicula():
+    datos = DatosRegistrados()
+    datosOBT = datos.traer_datos()
+    return render_template('pelicula.html', datosDB=datosOBT)
+
 #funciones
 @app.route('/iniciarSesion', methods=['post'])
 def extraer_datos():
