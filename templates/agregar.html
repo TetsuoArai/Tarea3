@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agregar pelicula</title>
+    <link rel="stylesheet" href="/static/css/agregar.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+<body>
+    <header>
+        <nav>
+            <h1 class="logo">MovieReview</h1>
+                <ul>
+                    <li><a href="{{ url_for('mostrar_index') }}">Inicio</a></li>
+                    <li><a href="{{ url_for('mostrar_pelicula') }}">Peliculas</a></li>
+                    <li><a href="{{ url_for('mostrar_agg') }}">Agregar</a></li>
+                    <li><a href="#">Perfil</a></li>
+                </ul>
+        </nav>
+    </header>  
+    <div class="cont-alerta">
+        {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+    
+            <div id="alert-container">
+                {% for category, message in messages %}
+                    <div class="alert alert-{{ category }} alert-dismissible fade show" role="alert">
+                        <strong>{{message}}</strong>
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                {% endfor %}
+            </div>
+    
+            {% endif %}
+        {% endwith %}
+        </div>
+        
+
+    <form action="/AggPelicula" method="post">
+        <div class="contenedor">
+            <div class="cuadro-form">
+                <div class="lado-izquierdo">
+                    <h1 class="titulo-principal sin-estilo">Agregar Película</h1>
+
+                    <label for="movie-image">Imagen de la película:</label>
+
+                    <input type="text" id="urlImagen" name='imagen_peli' class="url-imagen">
+
+                    <button class='cargar-imagen' onclick="cargarImagen()">Cargar imagen</button>
+                    <div class='imagen-cargado'>
+                        <img id="imagen" style="max-width: 100%; max-height: 100%;" />
+                    </div>
+
+                    <div>
+                    <label for="movie-name">Nombre de la película:</label>
+                    <input type="text" class="nombre-pelicula" name="nombre_peli" required>
+                    </div>
+
+                    <label>Tipo de película:</label>
+                    <select name="movie-type" required>
+                        <option name="movie-type" value="">Seleccionar tipo de película</option>
+                        <option name="movie-type" value="Acción">Acción</option>
+                        <option name="movie-type" value="Comedia">Comedia</option>
+                        <option name="movie-type" value="Drama">Drama</option>
+                        <option name="movie-type" value="Romance">Romance</option>
+                        <option name="movie-type" value="Ciencia ficción">Ciencia ficción</option>
+                        <option name="movie-type" value="Terror">Terror</option>
+                    </select>
+                <div class="btn-agg">
+                    <input type="submit" value="Agregar" class="btn-agg2">
+                </div>
+                </div>
+                <div class="contenedor-descripcion">
+                    <label style="color: white;">Descripción de la película:</label>
+                    <textarea class="descripcion-pelicula" name="movie-description" required></textarea>
+                </div>
+            </div>
+    </form>
+
+
+	<script type="text/javascript">
+		function cargarImagen() {
+			// Obtener la URL de la imagen
+			var urlImagen = document.getElementById("urlImagen").value;
+			
+			// Obtener el elemento img y establecer su atributo src
+			var imagen = document.getElementById("imagen");
+			imagen.src = urlImagen;
+		}
+	</script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js" integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N" crossorigin="anonymous"></script>
+</body>
+</html>
