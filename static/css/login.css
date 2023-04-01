@@ -1,0 +1,95 @@
+body{
+    margin:0;
+    padding:0;
+    background:url(https://c4.wallpaperflare.com/wallpaper/621/859/641/peliculas-terror-wallpaper-preview.jpg);
+    background-size: 50%;
+    font-family:sans-serif;
+}
+.cuerpo{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.6);
+    z-index: 1;
+}
+  
+.cuadrado {
+    width:350px;
+    height:490px;
+    top:350px;
+    left:50%;
+    background-color: rgb(32, 31, 31);
+    color:#fff;
+    position:absolute;
+    transform:translate(-50%,-50%);
+    box-sizing:border-box;
+    padding:125px 20px;
+    border-radius: 20px;
+}
+  
+.cuadrado .imagen {
+    width: 140px;
+    height: 120px;
+    position:absolute;
+    top: 10px;
+    left: 31%;
+    position:center;
+}
+  
+.cuadrado h1 {
+    margin:0;
+    padding:020px;
+    text-align:center;
+    font-size:22px;
+}
+  
+.cuadrado label{
+    margin:0;
+    padding:0;
+    font-weight:bold;
+    display:block;
+}
+  
+.cuadrado input {
+    width: 100%;
+    margin-bottom: 20px;
+}
+  
+.cuadrado input[type='text'],
+.cuadrado input[type='password']
+  {
+  border:none;
+  border-bottom:1px solid brown;
+  background:transparent;
+  outline:none;
+  height:40px;
+  color:#fff;
+  font-size:16px;
+  }
+  
+.cuadrado input[type='submit']
+  {
+    border:none;
+    outline:none;
+    height:40px;
+    background:brown;
+    color:#fff;
+    font-size:18px;
+    border-radius:20px;
+   }
+  
+  
+.cuadrado a{
+    color: darkgrey;
+    line-height: 28px;
+}
+
+/* Alerta */
+
+.cont-alerta{
+    z-index: 1000;
+    position: absolute;
+    width: 100%;
+  }
