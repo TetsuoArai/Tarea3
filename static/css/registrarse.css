@@ -1,0 +1,103 @@
+body{
+    margin:0;
+    padding:0;
+    background:url(https://c4.wallpaperflare.com/wallpaper/621/859/641/peliculas-terror-wallpaper-preview.jpg);
+    background-size: 50%;
+    font-family:sans-serif;
+}
+.cuerpo{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 700px;
+    background: rgba(0,0,0,0.6);
+    z-index: 1;
+}
+.cuadrado {
+    width:350px;
+    height:600px;
+    top:350px;
+    left:50%;
+    background-color: rgba(0,0,0,0.7);
+    color:#fff;
+    position:relative;
+    transform:translate(-50%,-50%);
+    box-sizing:border-box;
+    padding:150px 20px;
+    border-radius: 20px;
+  }
+  
+.cuadrado .imagen {
+    width: 140px;
+    height: 120px;
+    position:absolute;
+    top: 10px;
+    left: 31%;
+    position:center;
+  }
+
+.cuadrado h1 {
+    position: relative;
+    margin:0;
+    padding:020px;
+    text-align:center;
+    font-size:22px;
+    bottom: 25px;
+  }
+  
+.cuadrado label{
+    position: relative;
+    margin:0;
+    padding:0;
+    font-weight:bold;
+    display:block;
+    bottom: 23px;
+  }
+
+.cuadrado input {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.cuadrado input[type='text'],
+.cuadrado input[type='password'],
+.cuadrado input[type='email']
+{
+position: relative;
+border:none;
+border-bottom:1px solid brown;
+background:transparent;
+outline:none;
+height:40px;
+color:#fff;
+font-size:16px;
+bottom: 25px;
+}
+
+.cuadrado input[type='submit']
+{   
+    position: relative;
+    border:none;
+    outline:none;
+    height:40px;
+    background:brown;
+    color:#fff;
+    font-size:18px;
+    border-radius:20px;
+    bottom: 10px;
+   }
+
+
+.cuadrado a{
+    position: relative;
+    color: darkgrey;
+    line-height: 28px;
+    bottom: 5px;
+}
+
+.cont-alerta{
+  z-index: 1000;
+  position: absolute;
+  width: 100%;
+}
