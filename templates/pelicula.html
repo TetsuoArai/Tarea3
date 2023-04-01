@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Peliculas</title>
+    <link rel="stylesheet" href="/static/css/pelicula.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <h1>MovieReview</h1>
+                <ul>
+                    <li><a href="{{ url_for('mostrar_index') }}">Inicio</a></li>
+                    <li><a href="{{ url_for('mostrar_pelicula') }}">Peliculas</a></li>
+                    <li><a href="{{ url_for('mostrar_agg') }}">Agregar</a></li>
+                    <li><a href="#">Perfil</a></li>
+                </ul>
+        </nav>
+    </header> 
+    <h2>peliculas</h2>
+    {% for datos in datosDB %}
+    <div class="contenedor">
+        <div class="contenedor2">
+            <div class="tarjeta">
+                <figure>
+                    <img src="{{datos[0]}}" alt="">
+                </figure>
+                <div class="contenido">
+                    <h3>{{datos[1]}}</h3>
+                    <h4>tipo: {{datos[2]}}</h4>
+                    <div class="descripcion">
+                        <p>{{datos[3]}}</p>
+                    </div>
+                    <div class="botones">
+                        <button class="ver-mas">Ver más</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+            <script>
+                const verMasBoton = document.querySelector('.ver-mas');
+                const descripcion = document.querySelector('.descripcion');
+                const tarjeta = document.querySelector('.tarjeta');
+
+                verMasBoton.addEventListener('click', () => {
+                tarjeta.classList.toggle('expandido');
+                descripcion.classList.toggle('expandido');
+                });
+            </script>
+</body>
+</html>
+
+

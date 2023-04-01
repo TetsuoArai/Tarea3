@@ -68,3 +68,8 @@ class DatosRegistrados():
             self.cursor.execute(f"INSERT INTO pelicula(imagen, nombre, tipo, descripcion) VALUES('{imagen}','{nombre}','{tipo}', '{descripcion}')")
             self.conexion.commit()     
             return render_template('agregar.html')
+
+#funcion para traer datos
+    def traer_datos(self):
+        datos = self.cursor.execute('SELECT * FROM pelicula')
+        return datos
