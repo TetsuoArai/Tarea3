@@ -1,0 +1,227 @@
+*{
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    font-family: "Netflix Sans", sans-serif;
+}
+
+body{
+    background: url("https://fondosmil.com/fondo/12752.jpg");
+}
+
+nav{
+    background-color: #252525;
+    height: 80px;
+    width: 100%;
+}
+.logo{
+    position: absolute;
+    padding: 15px 50px;
+    color: white;
+}
+nav ul{
+    float: right;
+    margin-right: 20px;
+    list-style: none;
+}
+nav ul li{ 
+    display: inline-block;
+    line-height: 80px;
+    margin: 0 5px;
+    list-style: none;
+    border: none;
+}
+nav ul li a{
+    color: white;
+    font-size: 15px;
+    padding: 7px 13px;
+    border-radius: 3px;
+    border: none;
+    text-decoration: none;
+    list-style: none;
+    text-transform: uppercase;
+}
+nav ul li a:hover{
+    color: brown;
+  }
+
+.contenedor {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin-top: 40px;
+}
+    
+.cuadro-form{
+    border: 1px solid #ccc;
+    width: 540px;
+    height: 650px;
+    display: flex;
+    flex-direction: row;
+    border-radius: 10px;
+    border-color: black;
+    background-color: rgba(0,0,0,0.8);
+}
+
+.cuadro-form > div {
+    flex: 1;
+    margin-right: 0px;
+}
+    
+.cuadro-form > div:last-child {
+    margin-right: -50px;
+}
+    
+label, input, select, textarea {
+    display: block;
+}
+.titulo-principal{
+    position: relative;
+    left: 30%;
+    bottom: 5px;
+    color: white;
+    font-weight: bold;
+}
+.sin-estilo {
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 20px;
+  }
+.lado-izquierdo{
+    position: relative;
+    left: 40px;
+    top: 23px;
+    color: white;
+}
+input.url-imagen {
+    display: block;
+    width: 200px;
+    height: 35px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background: none;
+    font-size: 16px;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease-in-out;
+}
+.imagen-cargado{
+    width: 200px; 
+    height: 200px;
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+.cargar-imagen{
+    color: white;
+    border: 1px solid #ccc;
+    background: #ccc;
+    font-size: 16px;
+    width: 200px;
+    height: 35px;
+    box-sizing: border-box;
+    border-radius: 5px;
+    background: none;
+    transition: background-color 0.1s ease-in-out, color 0.1s ease-in-out;
+}
+.cargar-imagen:hover{
+    background: #3d0101;
+    border: none;
+}
+.file-input {
+    display: none;
+}
+.nombre-pelicula{
+    display: flex;
+    background-color: none;
+}
+.contenedor-descripcion{
+    position: relative;
+    top: 75px;
+}
+select[name="movie-type"] {
+    width: 200px;
+    padding: 10px;
+    border-radius: 5px;
+    color: white;
+    border: 1px solid #ccc;
+    background: none;
+    font-size: 16px;
+    appearance: none;
+    transition: all 0.5s ease;;
+}
+select[name="movie-type"] option {
+    color: #000;
+    background: none;
+    font-size: 16px;
+    }
+    
+select[name="movie-type"] option[value=""] {
+    display: none;
+    }
+    
+select[name="movie-type"]::-ms-expand {
+    display: none;
+    }
+.file-input {
+    display: none;
+}
+.descripcion-pelicula{
+    height: 320px;
+    width: 180px;
+    border-radius: 10px;
+    background: none;
+}
+label[for="movie-name"] {
+    display: block;
+    margin-bottom: 10px;
+    background: none;
+  }
+  
+input.nombre-pelicula {
+    display: block;
+    width: 200px;
+    height: 35px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background: none;
+    font-size: 16px;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease-in-out;
+  }
+
+.btn-agg {
+    display: flex;
+    padding-top: 20px;
+    position: relative;
+    bottom: 150px;
+    z-index: 1;
+}
+.btn-agg2{
+    position: absolute;
+    display: flex;
+    background-color: none;
+    border: 2px solid rgb(128, 128, 128);    
+    border-radius: 10px;
+    padding: 15px 40px;
+    margin: 150px;
+    color: white;
+    text-decoration: none;
+    font-size: 17px;
+    background: none;
+    transition: background-color 0.1s ease-in-out, color 0.1s ease-in-out;
+}
+
+.btn-agg2:hover{
+    color: white;
+    background-color: #3d0101;
+    border: none;
+}
+    
+.titulo-principal {
+    text-align: center;
+}

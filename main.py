@@ -54,3 +54,17 @@ class DatosRegistrados():
             self.cursor.execute(f"INSERT INTO persona(nombre, usuario, correo, contraseña) VALUES('{nombre}','{usuario}','{correo}', '{contraseña}')")
             self.conexion.commit()
             return render_template('registrarse.html')
+
+#Funcion de agregar pelicula
+    def agregar_pelicula(self, imagen, nombre, tipo, descripcion):
+        self.cursor.execute(f'SELECT nombre FROM pelicula')
+        nombreOBT = self.cursor.fetchall()
+
+        if self.Comparar_datos(nombreOBT, nombre) == True:
+            flash('Esta pelicula ya esta en la pagina', 'danger')
+            return render_template('agregar.html')
+        
+        else:
+            self.cursor.execute(f"INSERT INTO pelicula(imagen, nombre, tipo, descripcion) VALUES('{imagen}','{nombre}','{tipo}', '{descripcion}')")
+            self.conexion.commit()     
+            return render_template('agregar.html')
